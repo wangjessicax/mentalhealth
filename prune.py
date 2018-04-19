@@ -90,7 +90,7 @@ def prune_vgg16_conv_layer(model, layer_index, filter_index):
 
 	 	if old_linear_layer is None:
 	 		raise BaseException("No linear laye found in classifier")
-		params_per_input_channel = old_linear_layer.in_features / conv.out_channels
+	 	params_per_input_channel = old_linear_layer.in_features / conv.out_channels
 
 	 	new_linear_layer = \
 	 		torch.nn.Linear(old_linear_layer.in_features - params_per_input_channel, 
