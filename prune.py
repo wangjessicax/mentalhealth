@@ -107,10 +107,9 @@ def prune_vgg16_conv_layer(model, layer_index, filter_index):
 	 	new_linear_layer.bias.data = old_linear_layer.bias.data
 
 	 	new_linear_layer.weight.data = torch.from_numpy(new_weights).cuda()
-
-		classifier = torch.nn.Sequential(
-			*(replace_layers(model.classifier, i, [layer_index], \
-				[new_linear_layer]) for i, _ in enumerate(model.classifier)))
+	 	classifier = torch.nn.Sequential(
+	 		*(replace_layers(model.classifier, i, [layer_index], \
+	 			[new_linear_layer]) for i, _ in enumerate(model.classifier)))
 
 		del model.classifier
 		del next_conv
