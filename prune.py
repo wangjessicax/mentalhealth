@@ -110,11 +110,10 @@ def prune_vgg16_conv_layer(model, layer_index, filter_index):
 	 	classifier = torch.nn.Sequential(
 	 		*(replace_layers(model.classifier, i, [layer_index], \
 	 			[new_linear_layer]) for i, _ in enumerate(model.classifier)))
-
-		del model.classifier
-		del next_conv
-		del conv
-		model.classifier = classifier
+	 	del model.classifier
+	 	del next_conv
+	 	del conv
+	 	model.classifier = classifier
 
 	return model
 
