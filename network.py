@@ -244,8 +244,6 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--train", dest="train", action="store_true")
     parser.add_argument("--prune", dest="prune", action="store_true")
-    parser.add_argument("--train_path", type = str, default = "train")
-    parser.add_argument("--test_path", type = str, default = "test")
     parser.set_defaults(train=False)
     parser.set_defaults(prune=False)
     args = parser.parse_args()
@@ -259,7 +257,7 @@ if __name__ == '__main__':
     elif args.prune:
         model = torch.load("model").cuda()
 
-    fine_tuner = PrunningFineTuner_VGG16(args.train_path, args.test_path, model)
+    fine_tuner = PrunningFineTuner_VGG16(dataset.loader(), dataset.test_loader(), model)
 
     if args.train:
         fine_tuner.train(epoches = 20)
