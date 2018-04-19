@@ -125,8 +125,8 @@ class FilterPrunner:
 
 class PrunningFineTuner_VGG16:
     def __init__(self, train_path, test_path, model):
-        self.train_data_loader = dataset.loader(train_path)
-        self.test_data_loader = dataset.test_loader(test_path)
+        self.train_data_loader = train_path
+        self.test_data_loader = test_path
 
         self.model = model
         self.criterion = torch.nn.CrossEntropyLoss()

@@ -18,7 +18,7 @@ def loader():
 	depList=list()
 	for x in range(0,30000):
 		depList.append(contents[(x*2033)+113])
-	print(depList)
+	#print(depList)
 	return(depList)
 
 def test_loader():
@@ -38,7 +38,7 @@ def test_loader():
 	depList=list()
 	for x in range(0,30346):
 		depList.append(contents[(x*2033)+113])
-	print(depList)
+	#print(depList)
 
 
 
