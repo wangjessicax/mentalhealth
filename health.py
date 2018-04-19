@@ -1,5 +1,4 @@
 
-
 def loader():
 
 	file = open("data.txt","r") 
@@ -13,12 +12,14 @@ def loader():
 	totalList=list()
 	for x in range(0, 30000):
 		totalList.append(contents[x*2033:(x+1)*2033])
+	return(totalList)
 
 		#creates second array with specifically depression data which is in column 113 
 	depList=list()
-	for x in range(0,60346):
+	for x in range(0,30000):
 		depList.append(contents[(x*2033)+113])
 	print(depList)
+	return(depList)
 
 def test_loader():
 	file = open("data.txt","r") 
@@ -35,7 +36,7 @@ def test_loader():
 
 		#creates second array with specifically depression data which is in column 113 
 	depList=list()
-	for x in range(0,60346):
+	for x in range(0,30346):
 		depList.append(contents[(x*2033)+113])
 	print(depList)
 
