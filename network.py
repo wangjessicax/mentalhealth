@@ -174,8 +174,8 @@ class PrunningFineTuner_VGG16:
             optimizer.step()
 
     def train_epoch(self, optimizer = None, rank_filters = False):
-        for batch, label in self.train_data_loader:
-            self.train_batch(optimizer, batch.cuda(), label.cuda(), rank_filters)
+        for batch in self.train_data_loader:
+            self.train_batch(optimizer, batch.cuda(), batch.cuda(), rank_filters)
 
     def get_candidates_to_prune(self, num_filters_to_prune):
         self.prunner.reset()
