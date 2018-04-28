@@ -55,9 +55,9 @@ def get_data():
         charList = list()
         for c in s:
             char=float(c)
-            if c = " ":
+            if not c:  # if string is empty
                 charList.append(-1)
-            if c = int:
+            if c:
                 charList.append(char)
         print(charList)
         totalList2.append(charList)
