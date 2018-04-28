@@ -46,11 +46,17 @@ def get_data():
         depList.append(contents[(x*2033)+113]) #113 question
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
 
+
+    #cycle through string and convert into array
+
+    for s in totalList:
+        s=s.replace(" ", ".")
+
     #convert to numpy array     
     totalList_array=np.asarray(totalList)
     depList_array=np.asarray(depList)
     ageList_array=np.asarray(ageList)
-    
+    '''
     #cycle through numpy array and convert from string into numpy array
     for x in np.nditer(totalList_array):
         print(type(x))
@@ -58,7 +64,8 @@ def get_data():
         print(x)
         x=np.fromstring(x, dtype=int, sep='')
         print(x)
-
+    '''
+    
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
     N = totalList_array.shape[0]
