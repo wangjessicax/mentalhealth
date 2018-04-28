@@ -50,6 +50,7 @@ def get_data():
     #cycle through string and convert into array
     
     for s in totalList:
+        print("this is the string")
         print(s)
         charList = list()
         for c in s:
