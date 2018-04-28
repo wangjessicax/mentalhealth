@@ -8,6 +8,9 @@ import tensorflow as tf
 import numpy as np
 from numpy import array
 from sklearn.model_selection import train_test_split
+import os
+import sys
+import fileinput
 
 RANDOM_SEED = 42
 tf.set_random_seed(RANDOM_SEED)
