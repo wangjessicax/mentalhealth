@@ -49,10 +49,6 @@ def get_data():
         depList.append(contents[(x*2033)+113]) #113 question
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
 
-        if x % 10000 == 0:
-            print(str(contents[x*2033:(x+1)*2033]) + " HEY MAN !!" + str(x*2033) + "THATS MY FRIEND UR TALKING ABOUT")
-
-
     #cycle through string and convert into array
     
     for s in totalList:
@@ -176,5 +172,5 @@ def main():
     sess.close()
 
 if __name__ == '__main__':
-    size = 60000
+    size = 20000
     main()
