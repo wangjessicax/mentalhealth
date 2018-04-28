@@ -50,7 +50,7 @@ def get_data():
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
 
         if x % 10000 == 0:
-            print(str(contents[x*2033:(x+1)*2033]) + " " + str(x*2033))
+            print(str(contents[x*2033:(x+1)*2033]) + " HEY MAN !!" + str(x*2033))
 
 
     #cycle through string and convert into array
