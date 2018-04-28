@@ -86,7 +86,7 @@ def get_data():
 
         except:
             charList.append(9)
-            totalList2.append(np.asarray(charList))
+            depList2.append(np.asarray(charList))
             
 
     for s in ageList:
@@ -103,7 +103,9 @@ def get_data():
                     charList.append(char)
             ageList2.append(np.asarray(charList))
         except:
-            continue
+            charList.append(10)
+            ageList2.append(np.asarray(charList))
+
     
     #flatten the arrays within the array
 
@@ -125,6 +127,7 @@ def get_data():
     # Convert into one-hot vectors
     num_labels = max(np.unique(depList_array))+1
     all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
+    print(all_Y)
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
