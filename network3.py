@@ -42,6 +42,8 @@ def get_data():
     depList = list()
     ageList = list()
     totalList2=list()
+    depList2 =list()
+    ageList2=list()
     for x in range(0, 60346):
         totalList.append(contents[x*2033:(x+1)*2033])
         depList.append(contents[(x*2033)+113]) #113 question
@@ -67,33 +69,53 @@ def get_data():
             continue
        
 
+    #cycle through dep list and convert into array
+    for s in depList:
+        charList = list()
 
-    #convert to numpy array     
-    totalList_array=np.asarray(totalList2)
-    depList_array=np.asarray(depList)
-    ageList_array=np.asarray(ageList)
-    '''
-    #cycle through numpy array and convert from string into numpy array
-    for x in np.nditer(totalList_array):
-        print(type(x))
-        x=x.replace(" ", ".")
-        print(x)
-        x=np.fromstring(x, dtype=int, sep='')
-        print(x)
-    '''
+        try:
+            for c in s:
+                if c == ".":
+                    charList.append(10)
+                elif c.isspace() is True:  # if string is empty
+                    charList.append(10)
+                else:
+                    char=int(c)
+                    charList.append(char)
+            depList2.append(np.asarray(charList))
+        except:
+            continue
+
+    for s in ageList:
+        charList = list()
+
+        try:
+            for c in s:
+                if c == ".":
+                    charList.append(10)
+                elif c.isspace() is True:  # if string is empty
+                    charList.append(10)
+                else:
+                    char=int(c)
+                    charList.append(char)
+            ageList2.append(np.asarray(charList))
+        except:
+            continue
+          
+
 
     #Prepend the column of 1s for bias
-    print(totalList_array.shape)
-    N,M = totalList_array.shape
+    print(totalList2.shape)
+    N,M = totalList2.shape
     all_X = np.ones((N, M + 1))
-    all_X[:, 1:] = totalList_array
+    all_X[:, 1:] = totalList2
 
     s = '5.2 5.6 5.3'
     floats = [float(x) for x in s.split()]
 
     # Convert into one-hot vectors
-    num_labels = len(np.unique(depList_array))
-    all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
+    num_labels = len(np.unique(depList2))
+    all_Y = np.eye(num_labels)[depList2]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
