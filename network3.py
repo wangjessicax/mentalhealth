@@ -35,6 +35,8 @@ def get_data():
         
     #get all of X and Y data
     totalList=list()
+    depList = list()
+    ageList = list()
     for x in range(0, 60346):
         totalList.append(contents[x*2033:(x+1)*2033])
         depList.append(contents[(x*2033)+113]) #113 question
