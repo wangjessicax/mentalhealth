@@ -114,7 +114,7 @@ def get_data():
     N=totalList_array.shape[0]
     M=1
     all_X = np.ones((N, M + 1))
-    all_X[:, 1:] = np.reshape(totalList_array, (60346, 1)
+    all_X[:, 1:] = np.reshape(totalList_array, (60346, 1))
 
 
     # Convert into one-hot vectors
