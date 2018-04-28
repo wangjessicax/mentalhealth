@@ -48,12 +48,18 @@ def get_data():
     depList_array=np.asarray(depList)
     ageList_array=np.asarray(ageList)
     
+    #cycle through numpy array and convert into better format
+    for x in np.nditer(totalList_array):
+        print x,
+        
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
     N = totalList_array.shape[0]
     M=1
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = np.reshape(totalList_array,(60346,1))
+    s = '5.2 5.6 5.3'
+    floats = [float(x) for x in s.split()]
 
     # Convert into one-hot vectors
     num_labels = len(np.unique(depList_array))
