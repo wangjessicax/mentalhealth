@@ -134,7 +134,8 @@ def main():
     x_size = train_X.shape[1]   # Number of input nodes: 4 features and 1 bias
     h_size = 256                # Number of hidden nodes
     y_size = train_y.shape[1]   # Number of outcomes (3 iris flowers)
-
+    print(x_size)
+    print(y_size)
     # Symbols
     X = tf.placeholder("float", shape=[1, x_size])
     y = tf.placeholder("float", shape=[1, y_size])
