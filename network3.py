@@ -6,6 +6,7 @@
 # Similarly, for h * W_2 + b_2
 import tensorflow as tf
 import numpy as np
+from numpy import array
 from sklearn.model_selection import train_test_split
 
 RANDOM_SEED = 42
