@@ -69,7 +69,7 @@ def get_data():
 
 
     #convert to numpy array     
-    totalList_array=np.asarray(totalList)
+    totalList_array=np.asarray(totalList2)
     depList_array=np.asarray(depList)
     ageList_array=np.asarray(ageList)
     '''
