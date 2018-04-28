@@ -128,6 +128,7 @@ def get_data():
     num_labels = max(np.unique(depList_array))+1
     all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
     print("Scott's funny catch phrase")
+    print(np.eye(num_labels))
     print(all_Y)
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
