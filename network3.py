@@ -153,6 +153,7 @@ def main():
 
     # Forward propagation
     yhat    = forwardprop(X, w_1, w_2)
+    print(yhat.shape)
     predict = tf.argmax(yhat, axis=1)
 
     # Backward propagation
