@@ -172,5 +172,5 @@ def main():
     sess.close()
 
 if __name__ == '__main__':
-    size = 20000
+    size = 5000
     main()
