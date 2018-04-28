@@ -50,7 +50,8 @@ def get_data():
     
     #cycle through numpy array and convert from string into numpy array
     for x in np.nditer(totalList_array):
-        print(np.fromstring(x, dtype=int, sep=' '))
+        x=np.fromstring(x, dtype=int, sep=' ')
+        print(x)
 
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
