@@ -51,6 +51,7 @@ def get_data():
 
     for s in totalList:
         s=s.replace(" ", ".")
+        print(s)
 
     #convert to numpy array     
     totalList_array=np.asarray(totalList)
@@ -65,7 +66,7 @@ def get_data():
         x=np.fromstring(x, dtype=int, sep='')
         print(x)
     '''
-    
+
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
     N = totalList_array.shape[0]
