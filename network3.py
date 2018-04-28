@@ -145,7 +145,7 @@ def main():
     print(train_y.shape)
     # Symbols
     X = tf.placeholder("float", shape=[train_X.shape[0], x_size])
-    y = tf.placeholder("float", shape=[train_Y.shape[0], y_size])
+    y = tf.placeholder("float", shape=[train_y.shape[0], y_size])
 
     # Weight initializations
     w_1 = init_weights((x_size, h_size))
