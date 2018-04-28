@@ -54,7 +54,7 @@ def get_data():
         print(s)
         charList = list()
         for c in s:
-            if c = ".":
+            if c == ".":
                 charList.append(-1)
             elif c.isspace() is True:  # if string is empty
                 charList.append(-1)
