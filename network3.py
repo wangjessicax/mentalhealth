@@ -50,7 +50,8 @@ def get_data():
     
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
-    N, M = totalList_array.shape
+    N = totalList_array.shape
+    M=1
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = totalList_array
 
