@@ -34,7 +34,7 @@ def forwardprop(X, w_1, w_2):
 def get_data():
 
     """ Read the iris data set and split them into training and test sets """
-    file = open("data.txt","r") 
+    file = open("data.txt","rb") 
     contents=file.read()
         
     #get all of X and Y data
