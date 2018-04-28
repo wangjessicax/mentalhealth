@@ -55,7 +55,10 @@ def get_data():
         charList = list()
         for c in s:
             char=float(c)
-            charList.append(char)
+            if c = " ":
+                charList.append(-1)
+            if c = int:
+                charList.append(char)
         print(charList)
         totalList2.append(charList)
 
