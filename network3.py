@@ -76,9 +76,9 @@ def get_data():
         try:
             for c in s:
                 if c == ".":
-                    charList.append(10)
+                    charList.append(9)
                 elif c.isspace() is True:  # if string is empty
-                    charList.append(10)
+                    charList.append(9)
                 else:
                     char=int(c)
                     charList.append(char)
