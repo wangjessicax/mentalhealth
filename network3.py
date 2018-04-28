@@ -52,7 +52,7 @@ def get_data():
     for s in totalList:
         charList = list()
         for c in s:
-            char=float(s)
+            char=float(c)
             charList.append(char)
         print(charList)
         totalList2.append(charList)
