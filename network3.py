@@ -53,11 +53,11 @@ def get_data():
     N = totalList_array.shape[0]
     M=1
     all_X = np.ones((N, M + 1))
-    all_X[:, 1:] = totalList_array
+    all_X[:, 1:] = np.reshape(totalList_array,(60346,1))
 
     # Convert into one-hot vectors
     num_labels = len(np.unique(depList_array))
-    all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
+    all_Y = np.eye(num_labels)[depList_array]  # One linher trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
