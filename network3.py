@@ -49,6 +49,7 @@ def get_data():
     ageList_array=np.asarray(ageList)
     
     #Prepend the column of 1s for bias
+    print(totalList_array.shape)
     N, M = totalList_array.shape
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = totalList_array
