@@ -115,7 +115,7 @@ def get_data():
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
     N=totalList_array.shape[0]
-    M=1
+    M=totalList_array.shape[1]
     print("Total list...:")
     print(totalList_array[0].shape)
     totallist_array=totalList_array.flatten()
@@ -173,5 +173,5 @@ def main():
     sess.close()
 
 if __name__ == '__main__':
-    size = 60346
+    size = 600
     main()
