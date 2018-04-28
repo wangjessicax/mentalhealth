@@ -56,11 +56,11 @@ def get_data():
         try:
             for c in s:
                 if c == ".":
-                    charList.append(-1)
+                    charList.append(10)
                 elif c.isspace() is True:  # if string is empty
-                    charList.append(-1)
+                    charList.append(10)
                 else:
-                    char=float(c)
+                    char=int(c)
                     charList.append(char)
             totalList2.append(np.asarray(charList))
         except:
@@ -93,7 +93,7 @@ def get_data():
 
     # Convert into one-hot vectors
     num_labels = len(np.unique(depList_array))
-    all_Y = np.eye(num_labels)[depList_array]  # One linher trick!
+    all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
