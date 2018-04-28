@@ -51,8 +51,6 @@ def get_data():
     #cycle through string and convert into array
     
     for s in totalList:
-        print("this is the string")
-        print(s)
         charList = list()
         for c in s:
             if c == ".":
@@ -62,12 +60,8 @@ def get_data():
             else:
                 char=float(c)
                 charList.append(char)
-        print(charList)
         
         totalList2.append(charList)
-
-    print(totalList2)
-
 
 
     #convert to numpy array     
