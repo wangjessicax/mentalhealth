@@ -44,9 +44,9 @@ def get_data():
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
 
     #convert to numpy array     
-    np.asarray(totalList)
-    np.asarray(depList)
-    np.asarray(ageList)
+    totalList_array=np.asarray(totalList)
+    depList_array=np.asarray(depList)
+    ageList_array=np.asarray(ageList)
     
     #Prepend the column of 1s for bias
     N, M = totalList.shape
