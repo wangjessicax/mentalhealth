@@ -50,8 +50,7 @@ def get_data():
     #cycle through string and convert into array
 
     for s in totalList:
-        s=s.replace(" ", ".")
-        s=np.fromstring(s, dtype=int, sep='')
+        s=np.fromstring(s, dtype=np.uint16, sep='')
         print(s)
 
     #convert to numpy array     
