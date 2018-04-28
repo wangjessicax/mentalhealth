@@ -114,7 +114,7 @@ def get_data():
 
 
     # Convert into one-hot vectors
-    num_labels = max(np.unique(depList_array))
+    num_labels = max(np.unique(depList_array))+1
     all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
