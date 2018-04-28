@@ -56,7 +56,7 @@ def get_data():
         for c in s:
             if c.isspace() is True:  # if string is empty
                 charList.append(-1)
-            if c:
+            if c.isspace() is False:
                 char=float(c)
                 charList.append(char)
         print(charList)
