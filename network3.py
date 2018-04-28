@@ -50,7 +50,7 @@ def get_data():
     
     #cycle through numpy array and convert from string into numpy array
     for x in np.nditer(totalList_array):
-        x=str.replace(" ", ".")
+        x=x.replace(" ", ".")
         print(x)
         x=np.fromstring(x, dtype=int, sep='')
         print(x)
