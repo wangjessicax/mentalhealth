@@ -112,11 +112,9 @@ def get_data():
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = totalList_array
 
-    s = '5.2 5.6 5.3'
-    floats = [float(x) for x in s.split()]
 
     # Convert into one-hot vectors
-    num_labels = len(np.unique(depList_array))
+    num_labels = max(np.unique(depList_array))
     all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
