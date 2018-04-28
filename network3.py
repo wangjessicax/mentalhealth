@@ -66,7 +66,8 @@ def get_data():
                     charList.append(char)
             totalList2.append(np.asarray(charList))
         except:
-            continue
+            charList.append(10)
+            totalList2.append(np.asarray(charList))
        
 
     #cycle through dep list and convert into array
@@ -84,7 +85,9 @@ def get_data():
                     charList.append(char)
             depList2.append(np.asarray(charList))
         except:
-            continue
+            charList.append(9)
+            totalList2.append(np.asarray(charList))
+            
 
     for s in ageList:
         charList = list()
