@@ -86,7 +86,7 @@ def get_data():
     print(totalList_array.shape)
     N,M = totalList_array.shape
     all_X = np.ones((N, M + 1))
-    all_X[:, 1:] = np.reshape(totalList_array,(60346,1))
+    all_X[:, 1:] = totalList_array
 
     s = '5.2 5.6 5.3'
     floats = [float(x) for x in s.split()]
