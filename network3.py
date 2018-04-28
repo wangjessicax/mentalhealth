@@ -44,7 +44,7 @@ def get_data():
     totalList2=list()
     depList2 =list()
     ageList2=list()
-    for x in range(0, 60346):
+    for x in range(0, size):
         totalList.append(contents[x*2033:(x+1)*2033])
         depList.append(contents[(x*2033)+113]) #113 question
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
@@ -118,9 +118,9 @@ def get_data():
     M=1
     print("Total list...:")
     print(totalList_array[0].shape)
-    totallist2_array=totalList2_array.flatten()
+    totallist_array=totalList_array.flatten()
     #all_X = np.ones((N, M + 1))
-    all_X = np.reshape(totalList_array, (60346,2033))
+    all_X = np.reshape(totalList_array, (size,2033))
 
 
     # Convert into one-hot vectors
@@ -173,4 +173,5 @@ def main():
     sess.close()
 
 if __name__ == '__main__':
+    int size = 60 #60346
     main()
