@@ -62,7 +62,7 @@ def get_data():
                 else:
                     char=float(c)
                     charList.append(char)
-            totalList2.append(charList)
+            totalList2.append(np.asarray(charList))
         except:
             continue
        
@@ -84,8 +84,7 @@ def get_data():
 
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
-    N = totalList_array.shape[0]
-    M=1
+    N,M = totalList_array.shape
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = np.reshape(totalList_array,(60346,1))
 
