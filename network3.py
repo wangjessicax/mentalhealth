@@ -49,13 +49,13 @@ def get_data():
     ageList_array=np.asarray(ageList)
     
     #Prepend the column of 1s for bias
-    N, M = totalList.shape
+    N, M = totalList_array.shape
     all_X = np.ones((N, M + 1))
-    all_X[:, 1:] = totalList
+    all_X[:, 1:] = totalList_array
 
     # Convert into one-hot vectors
-    #num_labels = len(np.unique(depList))
-    #all_Y = np.eye(num_labels)[depList]  # One liner trick!
+    num_labels = len(np.unique(depList_array))
+    all_Y = np.eye(num_labels)[depList_array]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
