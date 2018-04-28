@@ -27,7 +27,9 @@ def forwardprop(X, w_1, w_2):
     yhat = tf.matmul(h, w_2)  # The \varphi function
     return yhat
 
+
 def get_data():
+
     """ Read the iris data set and split them into training and test sets """
     file = open("data.txt","r") 
     contents=file.read()
@@ -37,16 +39,21 @@ def get_data():
     for x in range(0, 60346):
         totalList.append(contents[x*2033:(x+1)*2033])
         depList.append(contents[(x*2033)+113]) #113 question
-        ageList.append(contents[(x*2033)+121:((x+1)*2033)+122]
+        ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
+
+    #convert to numpy array     
+    np.asarray(totalList)
+    np.asarray(depList)
+    np.asarray(ageList)
     
     #Prepend the column of 1s for bias
-    N, M  = totalList.shape
+    N, M = totalList.shape
     all_X = np.ones((N, M + 1))
     all_X[:, 1:] = totalList
 
     # Convert into one-hot vectors
-    num_labels = len(np.unique(depList))
-    all_Y = np.eye(num_labels)[depList]  # One liner trick!
+    #num_labels = len(np.unique(depList))
+    #all_Y = np.eye(num_labels)[depList]  # One liner trick!
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
 def main():
