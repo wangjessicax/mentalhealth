@@ -48,10 +48,18 @@ def get_data():
 
 
     #cycle through string and convert into array
-
+    
     for s in totalList:
-        s=np.fromstring(s, sep='')
-        print(s)
+        charList = list()
+        for c in s:
+            char=float(s)
+            charList.append(char)
+        print(charList)
+        totalList2.append(charList)
+
+    print(totalList2)
+
+
 
     #convert to numpy array     
     totalList_array=np.asarray(totalList)
