@@ -51,6 +51,7 @@ def get_data():
 
     for s in totalList:
         s=s.replace(" ", ".")
+        s=np.fromstring(s, dtype=int, sep='')
         print(s)
 
     #convert to numpy array     
