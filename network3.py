@@ -136,6 +136,8 @@ def main():
     y_size = train_y.shape[1]   # Number of outcomes (3 iris flowers)
     print(x_size)
     print(y_size)
+    print(train_X.shape)
+    print(train_y.shape)
     # Symbols
     X = tf.placeholder("float", shape=[1, x_size])
     y = tf.placeholder("float", shape=[1, y_size])
