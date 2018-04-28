@@ -62,7 +62,7 @@ def get_data():
                 else:
                     char=float(c)
                     charList.append(char)
-             totalList2.append(charList)
+            totalList2.append(charList)
         except:
             continue
        
