@@ -49,6 +49,9 @@ def get_data():
         depList.append(contents[(x*2033)+113]) #113 question
         ageList.append(contents[(x*2033)+121:((x+1)*2033)+122])
 
+        if x % 10000 == 0:
+            print(contents[x*2033:(x+1)*2033] + " " + (x*2033:(x+1)*2033))
+
 
     #cycle through string and convert into array
     
