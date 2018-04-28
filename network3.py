@@ -52,16 +52,20 @@ def get_data():
     
     for s in totalList:
         charList = list()
-        for c in s:
-            if c == ".":
-                charList.append(-1)
-            elif c.isspace() is True:  # if string is empty
-                charList.append(-1)
-            else:
-                char=float(c)
-                charList.append(char)
-        
-        totalList2.append(charList)
+
+        try:
+            for c in s:
+                if c == ".":
+                    charList.append(-1)
+                elif c.isspace() is True:  # if string is empty
+                    charList.append(-1)
+                else:
+                    char=float(c)
+                    charList.append(char)
+             totalList2.append(charList)
+        except:
+            continue
+       
 
 
     #convert to numpy array     
