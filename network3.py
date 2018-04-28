@@ -50,7 +50,7 @@ def get_data():
     
     #cycle through numpy array and convert into better format
     for x in np.nditer(totalList_array):
-        print x
+        print(x)
 
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
