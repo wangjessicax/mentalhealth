@@ -84,6 +84,7 @@ def get_data():
                     char=int(c)
                     charList.append(char)
             depList2.append(np.asarray(charList))
+
         except:
             charList.append(9)
             totalList2.append(np.asarray(charList))
@@ -104,17 +105,20 @@ def get_data():
             ageList2.append(np.asarray(charList))
         except:
             continue
-          
+    
+    #flatten the arrays within the array
 
     totalList_array=np.asarray(totalList2)
     depList_array=np.asarray(depList2)
     ageList_array=np.asarray(ageList)
+
     #Prepend the column of 1s for bias
     print(totalList_array.shape)
     N=totalList_array.shape[0]
     M=1
     print("Total list...:")
     print(totalList_array[0].shape)
+    totallist2_array=totalList2_array.flatten()
     #all_X = np.ones((N, M + 1))
     all_X = np.reshape(totalList_array, (60346,2033))
 
