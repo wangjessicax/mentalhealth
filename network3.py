@@ -71,21 +71,21 @@ def get_data():
 
     #cycle through dep list and convert into array
     for s in depList:
-        charList = list()
+        charList = np.zeros(10)
 
         try:
             for c in s:
                 if c == ".":
-                    charList.append(9)
+                    charList[9]=1
                 elif c.isspace() is True:  # if string is empty
-                    charList.append(9)
+                    charList[9]=1
                 else:
                     char=int(c)
-                    charList.append(char)
+                    charList[char]=1
             depList2.append(np.asarray(charList))
 
         except:
-            charList.append(9)
+            charList[9]=1
             depList2.append(np.asarray(charList))
             
 
@@ -126,9 +126,9 @@ def get_data():
 
     # Convert into one-hot vectors
     num_labels = max(np.unique(depList_array))+1
-    all_Y = np.eye(num_labels) # One liner trick!
-    print("Scott's funny catch phrase")
-    print(np.eye(num_labels))
+
+    all_Y = depList_array
+
    # print(all_Y)
     return train_test_split(all_X, all_Y, test_size=0.33, random_state=RANDOM_SEED)
 
