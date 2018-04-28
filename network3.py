@@ -41,6 +41,7 @@ def get_data():
     totalList=list()
     depList = list()
     ageList = list()
+    totalList2=list()
     for x in range(0, 60346):
         totalList.append(contents[x*2033:(x+1)*2033])
         depList.append(contents[(x*2033)+113]) #113 question
@@ -62,6 +63,7 @@ def get_data():
                 char=float(c)
                 charList.append(char)
         print(charList)
+        
         totalList2.append(charList)
 
     print(totalList2)
