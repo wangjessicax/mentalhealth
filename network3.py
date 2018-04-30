@@ -180,8 +180,7 @@ def main():
         print("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
               % (epoch + 1, 100. * train_accuracy, 100. * test_accuracy))
 
-        if epoch % 10 == 0:
-            fh.write("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
+        fh.write("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
               % (epoch + 1, 100. * train_accuracy, 100. * test_accuracy))
 
 
