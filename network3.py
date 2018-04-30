@@ -144,8 +144,8 @@ def main():
     print(train_X.shape)
     print(train_y.shape)
     # Symbols
-    X = tf.placeholder("float", shape=[train_X.shape[0], x_size])
-    y = tf.placeholder("float", shape=[1, y_size])
+    X = tf.placeholder("float", shape=[None, x_size])
+    y = tf.placeholder("float", shape=[None, y_size])
 
     # Weight initializations
     w_1 = init_weights((x_size, h_size))
@@ -157,7 +157,7 @@ def main():
     predict = tf.argmax(yhat, axis=1)
 
     # Backward propagation
-    yhat = tf.transpose(yhat)
+    #yhat = tf.transpose(yhat)
     cost    = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=yhat))
     updates = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
 
