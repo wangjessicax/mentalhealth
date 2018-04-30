@@ -166,6 +166,7 @@ def main():
     init = tf.global_variables_initializer()
     sess.run(init)
 
+    fh = open("brainresults.txt","w")
     for epoch in range(100):
         # Train with each example
         for i in range(len(train_X)):
@@ -179,8 +180,14 @@ def main():
         print("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
               % (epoch + 1, 100. * train_accuracy, 100. * test_accuracy))
 
+        if epoch % 10 == 0:
+            fh.write("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
+              % (epoch + 1, 100. * train_accuracy, 100. * test_accuracy))
+
+
+    fh.close()
     sess.close()
 
 if __name__ == '__main__':
-    size = 10000
+    size = 10000 #60346
     main()
