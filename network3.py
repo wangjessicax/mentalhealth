@@ -167,6 +167,7 @@ def main():
     sess.run(init)
 
     fh = open("brainresults.txt","w")
+    saver = tf.train.Saver()
     for epoch in range(100):
         # Train with each example
         for i in range(len(train_X)):
@@ -177,6 +178,8 @@ def main():
         test_accuracy  = np.mean(np.argmax(test_y, axis=1) ==
                                  sess.run(predict, feed_dict={X: test_X, y: test_y}))
 
+        save_path = saver.save(sess, "/tmp/model.ckpt")
+        
         print("Epoch = %d, train accuracy = %.2f%%, test accuracy = %.2f%%"
               % (epoch + 1, 100. * train_accuracy, 100. * test_accuracy))
 
@@ -186,6 +189,15 @@ def main():
 
     fh.close()
     sess.close()
+def test():
+
+    sess = tf.Session()
+    saver = tf.train.Saver()
+    saver.restore(sess, "/tmp/model.ckpt")
+
+    sess.run(predict, feed_dict={X: , y: test_y})
+    
+
 
 if __name__ == '__main__':
     size = 10000 #60346
