@@ -157,6 +157,7 @@ def main():
     predict = tf.argmax(yhat, axis=1)
 
     # Backward propagation
+    yhat = tf.transpose(yhat)
     cost    = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=yhat))
     updates = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
 
