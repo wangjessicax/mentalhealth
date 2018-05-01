@@ -168,7 +168,7 @@ def main():
 
     fh = open("brainresults.txt","w")
     saver = tf.train.Saver()
-    for epoch in range(100):
+    for epoch in range(10000):
         # Train with each example
         for i in range(len(train_X)):
             sess.run(updates, feed_dict={X: train_X[i: i + 1], y: train_y[i: i + 1]})
